@@ -1,44 +1,54 @@
-def withdraw(request, balance):
-    if request > balance:
-        print "$"+str(balance)+" max"
-        print "************************** "
-        return balance
-    elif request <= 0:
-        print "Invalid request"
-        print "************************** "
-        return balance
-    else:
-        balance -= request
-        while request > 0:
-            if request >= 100:
-                request -= 100
-                print "give $100"
-            elif request >= 50:
-                request -= 50
-                print"give $50"
-            elif request >= 20:
-                request -= 20
-                print"give $20"
-            elif request >= 10:
-                request -= 10
-                print"give $10"
-            elif request >= 5:
-                request -= 5
-                print"give $5"
-            else:
-                request -= 1
-                print"give $1"
-        print "Current Balance " + "$" + str(balance)
-        print "************************** "
-        return balance
+class ATM():
 
-balance = 500
-print "Current Balance " + "$" + str(balance)
+    def __init__(self, balance, bank_name):
+        self.balance = balance
+        self.bank_name = bank_name
 
-balance = withdraw(277, balance)
+    def withdraw(self, request):
+        if request > self.balance:
+            print "Welcome to " +(self.bank_name)
+            print "$"+str(self.balance)+" max"
+            print "************************** "
+            return self.balance
+        elif request <= 0:
+            print "Welcome to " +(self.bank_name)
+            print "Invalid request"
+            print "************************** "
+            return self.balance
+        else:
+            print "Welcome to " +(self.bank_name)
+            (self.balance) -= request
+            while request > 0:
+                if request >= 100:
+                    request -= 100
+                    print "give $100"
+                elif request >= 50:
+                    request -= 50
+                    print"give $50"
+                elif request >= 20:
+                    request -= 20
+                    print"give $20"
+                elif request >= 10:
+                    request -= 10
+                    print"give $10"
+                elif request >= 5:
+                    request -= 5
+                    print"give $5"
+                else:
+                    request -= 1
+                    print"give $1"
+            print "Current Balance " + "$" + str(self.balance)
+            print "************************** "
+            return self.balance
 
-balance = withdraw(30, balance)
+BALANCE1 = 500
+ATM1 = ATM(BALANCE1, "Smart Bank")
 
-balance = withdraw(5, balance)
+BALANCE2 = 1000
+ATM2 = ATM(BALANCE2, "Baraka Bank")
 
-balance = withdraw(500, balance)
+ATM1.withdraw(277)
+ATM1.withdraw(800)
+
+ATM2.withdraw(100)
+ATM2.withdraw(2000)
