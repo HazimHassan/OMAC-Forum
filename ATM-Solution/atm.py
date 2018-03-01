@@ -1,9 +1,14 @@
 def withdraw(request, balance):
     if request > balance:
         print "$"+str(balance)+" max"
+        print "************************** "
+        return balance
     elif request <= 0:
         print "Invalid request"
+        print "************************** "
+        return balance
     else:
+        balance -= request
         while request > 0:
             if request >= 100:
                 request -= 100
@@ -23,6 +28,17 @@ def withdraw(request, balance):
             else:
                 request -= 1
                 print"give $1"
-#withdraw(120, 500)
-#withdraw(297, 380)
-withdraw(90, 83)
+        print "Current Balance " + "$" + str(balance)
+        print "************************** "
+        return balance
+
+balance = 500
+print "Current Balance " + "$" + str(balance)
+
+balance = withdraw(277, balance)
+
+balance = withdraw(30, balance)
+
+balance = withdraw(5, balance)
+
+balance = withdraw(500, balance)
