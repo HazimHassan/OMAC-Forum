@@ -21,10 +21,11 @@ class MemberStore:
         MemberStore.members.remove(member)
 
     def entity_exists(self, member):
-        #result = "Exists"
         if self.get_by_id(member.id) == "Not found":
             return  "Not Exists"
         return "Exists"
+    
+    def update(self, member):
 
 class PostStore:
     posts = []
