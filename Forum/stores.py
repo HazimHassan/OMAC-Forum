@@ -73,6 +73,11 @@ class PostStore():
             if id == post.id:
                 return post
         return None
+    
+    def get_posts_by_date(self):
+        all_posts = self.get_all()
+        all_posts.sort(key=lambda post: post.date, reverse=True) 
+        return (post for post in all_posts)
 
     def delete(self, id):
         post = self.get_by_id(id)
