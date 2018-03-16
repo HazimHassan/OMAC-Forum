@@ -1,8 +1,8 @@
 import models
 import stores
 
-member1 = models.Member("Member1", "26")
-member2 = models.Member("Member2", "30")
+member1 = models.Member("Hassan", "26")
+member2 = models.Member("Khaled", "30")
 
 MS = stores.MemberStore()
 MS.add(member1)

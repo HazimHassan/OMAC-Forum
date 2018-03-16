@@ -4,6 +4,10 @@ class Member():
         self.id = 0
         self.name = name
         self.age = age
+    
+    def __str__(self):
+        return  "Name: "+ self.name
+
 
 
 class Post():
@@ -12,3 +16,7 @@ class Post():
         self.id = 0
         self.title = title
         self.body = body
+    
+    def __str__(self):
+        return  "Title: "+ self.title
+        

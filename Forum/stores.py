@@ -1,4 +1,4 @@
-class MemberStore:
+class MemberStore():
     members = []
     last_id = 1
 
@@ -14,20 +14,20 @@ class MemberStore:
         for member in MemberStore.members:
             if id == member.id:
                 return member
-        return "Not found"
+        return None
 
     def delete(self, id):
         member = self.get_by_id(id)
         MemberStore.members.remove(member)
 
     def entity_exists(self, member):
-        if self.get_by_id(member.id) == "Not found":
-            return  "Not Exists"
-        return "Exists"
+        if self.get_by_id(member.id) == None:
+            return  False
+        return True
     
     def update(self, member):
 
-class PostStore:
+class PostStore():
     posts = []
     last_id = 1
 
@@ -43,14 +43,13 @@ class PostStore:
         for post in PostStore.posts:
             if id == post.id:
                 return post
-        return "Not found"
+        return None
 
     def delete(self, id):
         post = self.get_by_id(id)
         PostStore.posts.remove(post)
 
     def entity_exists(self, post):
-        #result = "Exists"
-        if self.get_by_id(post.id) == "Not found":
-            return  "Not Exists"
-        return "Exists"
+        if self.get_by_id(post.id) == None:
+            return  False
+        return True
