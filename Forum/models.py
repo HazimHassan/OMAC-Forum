@@ -7,18 +7,18 @@ class Member():
         self.posts = []
     
     def __str__(self):
-        return f"Name: {self.name}, Age: {self.age}"
+        return "Name: {self.name}, Age: {self.age}"
 
 
 
 class Post():
 
-    def __init__(self, title, body):
+    def __init__(self, title, body, member_id):
         self.id = 0
         self.title = title
         self.body = body
         self.member_id = member_id
     
     def __str__(self):
-        return f"Title: {self.title}, Bdoy: {self.body}"
+        return "Title: {self.title}, Bdoy: {self.body}"
         
